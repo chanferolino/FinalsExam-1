@@ -10,6 +10,7 @@
 
     <fragment
         android:id="@+id/videoListFragment"
+        android:name="com.usjr.finalsexam.fragments.VideoListFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="16dp"
@@ -25,5 +26,4 @@
         tools:layout="@layout/fragment_video_list"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintTop_creator="1"/>
-
 </android.support.constraint.ConstraintLayout>

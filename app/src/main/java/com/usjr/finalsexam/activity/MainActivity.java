@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
 //        fm.beginTransaction()
 //                .replace(R.id.videoListFragment, videoListFragment).commit();
 
-        fm.beginTransaction()
-                .attach(videoListFragment).commit();
+
+       videoListFragment.getOnVideoSelectedListener();
 
     }
 }

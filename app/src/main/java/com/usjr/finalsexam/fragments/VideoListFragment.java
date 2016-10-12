@@ -60,7 +60,7 @@ public class VideoListFragment extends Fragment implements AdapterView.OnItemCli
 
         ArrayList<Video> contents = new ArrayList<>();
         TestData.testAddVideoData();
-       TestData list = new TestData();
+        TestData list = new TestData();
         contents = list.getVideos();
         mAdapter = new VideoListAdapter(getContext(), contents);
         listView.setAdapter(mAdapter);
