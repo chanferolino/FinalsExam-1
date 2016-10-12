@@ -1,10 +1,12 @@
 package com.usjr.finalsexam.activity;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.usjr.finalsexam.R;
+import com.usjr.finalsexam.entity.Video;
 import com.usjr.finalsexam.fragments.VideoListFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,5 +19,11 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fm = getSupportFragmentManager();
         VideoListFragment videoListFragment =
                 (VideoListFragment) fm.findFragmentById(R.id.videoListFragment);
+//        fm.beginTransaction()
+//                .replace(R.id.videoListFragment, videoListFragment).commit();
+
+        fm.beginTransaction()
+                .attach(videoListFragment).commit();
+
     }
 }

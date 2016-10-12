@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.usjr.finalsexam.R;
+import com.usjr.finalsexam.entity.TestData;
 import com.usjr.finalsexam.entity.Video;
 
 import java.util.List;
@@ -43,6 +44,7 @@ public class VideoListAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
 
+
         if (convertView == null) {
             convertView = LayoutInflater.from(mContext).inflate(R.layout.list_item_video, parent, false);
             holder = new ViewHolder(convertView);
@@ -54,6 +56,10 @@ public class VideoListAdapter extends BaseAdapter {
         if (video != null) {
             if (holder.imgThumbnail != null) {
                 Glide.with(mContext).load(video.thumbnailUrl).into(holder.imgThumbnail);
+
+            }
+            if (holder.tvTitle != null) {
+                holder.tvTitle.setText(video.getTitle());
             }
         }
 
@@ -74,6 +80,7 @@ public class VideoListAdapter extends BaseAdapter {
 
         public ViewHolder(View itemView) {
             tvTitle = (TextView) itemView.findViewById(R.id.tvTitle);
+            imgThumbnail = (ImageView) itemView.findViewById(R.id.imgThumbnail);
         }
     }
 }

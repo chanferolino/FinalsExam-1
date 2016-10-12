@@ -13,6 +13,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.usjr.finalsexam.R;
 import com.usjr.finalsexam.adapters.VideoListAdapter;
+import com.usjr.finalsexam.entity.TestData;
 import com.usjr.finalsexam.entity.Video;
 
 import java.util.ArrayList;
@@ -32,6 +33,7 @@ public class VideoListFragment extends Fragment implements AdapterView.OnItemCli
     public VideoListFragment() {
         // Required empty public constructor
     }
+
 
     public OnVideoSelectedListener getOnVideoSelectedListener() {
         return mOnVideoSelectedListener;
@@ -56,7 +58,11 @@ public class VideoListFragment extends Fragment implements AdapterView.OnItemCli
         View view = inflater.inflate(R.layout.fragment_video_list, container, false);
         ListView listView = (ListView) view.findViewById(R.id.listView);
 
-        mAdapter = new VideoListAdapter(getContext(), new ArrayList<Video>());
+        ArrayList<Video> contents = new ArrayList<>();
+        TestData.testAddVideoData();
+       TestData list = new TestData();
+        contents = list.getVideos();
+        mAdapter = new VideoListAdapter(getContext(), contents);
         listView.setAdapter(mAdapter);
 
         return view;

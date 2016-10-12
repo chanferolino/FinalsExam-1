@@ -5,13 +5,13 @@ import java.util.List;
 
 public class TestData {
 
-    private List<Video> mVideos;
+    private static ArrayList<Video> mVideos;
 
     public TestData() {
-        mVideos = new ArrayList<>();
+        mVideos = new ArrayList<Video>();
     }
 
-    private void testAddVideoData() {
+    public static void testAddVideoData() {
         mVideos.add(new Video("B08iLAtS3AQ", "What's new in Android - Google I/O 2016", "For more videos and games check out our new website at http://www.sesamestreet.org \n" +
                 "\n" +
                 "In this video, Bert and Ernie perform with Ray Charles. \n" +
@@ -92,7 +92,7 @@ public class TestData {
                         "#io16 #GoogleIO #GoogleIO2016", "https://i.ytimg.com/vi/j33M5BqoLuI/mqdefault.jpg"));
     }
 
-    public List<Video> getVideos() {
+    public ArrayList<Video> getVideos() {
         return mVideos;
     }
 }
